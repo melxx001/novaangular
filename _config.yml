@@ -1,1 +1,15 @@
-theme: jekyll-theme-minimal
+# Site settings
+title: Nova Angular
+email: hicham.elhammouchi@gmail.com
+url: http://www.novaangular.com
+description: "Nova Angular Meetup Website"
+version: 0.0.1
+hostName: www.novaangular.com
+domainName: novaangular.com
+meetupUrl: https://www.meetup.com/Nova-Angular/
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+kramdown:
+  toc_levels: '2,3'

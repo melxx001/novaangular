@@ -1,1 +1,5 @@
-This is the README for the novaangular website
+# Nova Angular
+
+This is the README for the Nova Angular Website
+
+
