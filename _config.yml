@@ -7,6 +7,9 @@ version: 0.0.1
 hostName: www.novaangular.com
 domainName: novaangular.com
 meetupUrl: https://www.meetup.com/Nova-Angular/
+joinMeetupUrl: https://www.meetup.com/Nova-Angular/join/
+slackUserName: hicham
+slackInviteUrl: https://join.slack.com/novaangular/shared_invite/MjEyMTQzMDkzNjA3LTE0OTk4MDM5NjgtMmQ5NjVkOGRhOA
 
 # Build settings
 markdown: kramdown

@@ -1,3 +1,7 @@
+---
+title: Nova Angular Home
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +13,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>{{ page.title }}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
-
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +45,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+                    <span class="light">Home</span> 
                 </a>
             </div>
 
@@ -56,10 +60,16 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#joinMeetup">Join on Meetup</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#joinSlack">Join via Slack</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/code-of-conduct">Code of Conduct</a>
                     </li>
                 </ul>
             </div>
@@ -74,9 +84,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Grayscale</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                            <br>Created by Start Bootstrap.</p>
+                        <h1 class="brand-heading">{{ site.title }}</h1>
+                        <p class="intro-text">Home Page of the {{ site.title }} Meetup</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -89,75 +98,80 @@
     <!-- About Section -->
     <section id="about" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+            <div class="about-section">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="margin-0">About {{ site.title }}</h2>
+                    <div class="about-section-image"></div>
+                    <p>
+                        We're mainly focused on Angular and Javascript. <br />
+                        People of all skill levels are welcome.
+                        We want to help people learn cool stuff! <br />
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+    <!-- Join Metup -->
+    <section id="joinMeetup" class="container content-section text-center">
+        <div class="default-section">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Join on Meetup</h2>
+                <a href="{{ site.joinMeetupUrl }}" class="btn btn-default btn-lg" target="_blank">Join {{ site.title }}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slack -->
+    <section id="joinSlack" class="container content-section text-center">
+        <div class="default-section">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="margin-0">Sign up to our meetup slack</h2>
+                <div>
+                    <a href="{{ site.slackInviteUrl }}" aria-label="Join {{ site.title }} Slack">
+                        <img alt="" src="/img/slack.svg" height="100" width="100"/>
+                    </a>
                 </div>
+                <p><a href="{{ site.slackInviteUrl }}" class="btn btn-default btn-lg" target="_blank">Join {{ site.title }} Slack</a></p>
+                <p>Please message the organizer on the meetup page if you have troubles.<p/>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
-        <div class="row">
+        <div class="default-section">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
+                <h2>Contact {{ site.title }}</h2>
+                <p>Feel free to message @{{ site.slackUserName }} on Slack to provide some feedback, or to just say hello!</p>
+                <p>You can also message the organizers via Meetup.</p>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <div id="map"></div>
-
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+            <p>Copyright &copy; {{ site.title }} 
+            <script>
+            (function(){
+                document.write(new Date().getFullYear());
+            })();
+            </script></p>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
     <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="/js/main.min.js"></script>
 
 </body>
 
